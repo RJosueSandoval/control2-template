@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid'
-//const usuarios = {}
+const usuarios = []
 export default function getToken(ctx ) {
     //getUUIDV4 = require('C:/Users/Asus/Desktop/TEL335/control2-template/src/utils/uuid');
     let id = ctx.params.id
@@ -22,16 +22,16 @@ export default function getToken(ctx ) {
     {        
         ctx.body = {status : 500,
         message : "Codigo incorrecto"}
-        //usuarios.append({id,token})
+        usuarios.push({id,token})
         return token
     }
 }
 
-/*exports.getUser = (ctx ) => {
+exports.getUser = (ctx ) => {
         let id = ctx.params.id
         ctx.body = {
                         status : 200,
                         message : usuarios[id]
         }
         return usuarios
-}*/
+}
